@@ -6,12 +6,12 @@ const Schema = mongoose.Schema;
 const CommentSchema = new Schema({
     date: { type: Date, required: true },
     message: { type: String, required: true },
+    postID: { type: Schema.Types.ObjectId, ref: "Post", required: true },
     user: { type: Schema.Types.ObjectId, ref: "User", required: true },
-
 });
 
 // Virtual for comment's formatted data 
-MessageSchema.virtual("formatted_date").get(function () {
+CommentSchema.virtual("formatted_date").get(function () {
     return this.date.toJSON().slice(0, 10).replace(/-/g, '/')
 })
 

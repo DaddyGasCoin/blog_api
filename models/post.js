@@ -8,12 +8,10 @@ const PostSchema = new Schema({
     date: { type: Date, required: true },
     message: { type: String, required: true },
     user: { type: Schema.Types.ObjectId, ref: "User", required: true },
-    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
-
 });
 
 // Virtual for message's formatted date
-MessageSchema.virtual("formatted_date").get(function () {
+PostSchema.virtual("formatted_date").get(function () {
     return this.date.toJSON().slice(0, 10).replace(/-/g, '/')
 })
 

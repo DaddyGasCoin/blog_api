@@ -4,12 +4,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    first_name: { type: String, required: true, maxLength: 100 },
-    last_name: { type: String, required: true, maxLength: 100 },
-    username: { type: String, required: true, maxLength: 100 },
+    first_name: { type: String, required: true, maxLength: 100, minLenth: 1 },
+    last_name: { type: String, required: true, maxLength: 100, minLenth: 1 },
+    username: { type: String, required: true, maxLength: 100, minLenth: 3, unique: true, index: true },
     password: { type: String, required: true, maxLength: 100 },
-    posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
-    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
+    admin: { type: Boolean, default: false }
 
 });
 
