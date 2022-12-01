@@ -2,7 +2,7 @@
 # Summary
  An API for the blog using nodejs and mongodb
  
-[Live Preview of frontend](https://daddygascoin.github.io/reddit-clone/) :point_left:
+[frontend preview](https://blog-frontend-jy6q.onrender.com/) :point_left:
 
 ## Features
  - View individual post and comments
