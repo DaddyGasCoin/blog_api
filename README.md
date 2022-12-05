@@ -24,9 +24,7 @@
 ```
  /posts
 ```
-  Create new post
 ```
-  /post/create
  
   axios.get('https://blogapi-production-d43c.up.railway.app/posts')
   //sample respose
