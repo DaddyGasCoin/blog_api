@@ -48,11 +48,14 @@ router.get("/user/:id/details", user_controller.user_detail);
 
 // /// COMMENT ROUTES ///
 
-// //POST request for creating commetn.
+// //POST request for creating comment.
 router.post("/comment/:id/create", passport.authenticate('jwt', { session: false }),
   comment_controller.comment_create_post);
 // // POST request to delete comment
 router.post("/comment/:id/delete", verifyToken, comment_controller.comment_delete_post);
+
+// //GET request to get all comments
+router.get("/comments/", comment_controller.comment_list)
 
 
 module.exports = router;

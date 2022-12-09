@@ -40,3 +40,16 @@ exports.comment_delete_post = async (req, res, next) => {
     }
     return res.sendStatus(200)
 }
+
+//List of all comments
+exports.comment_list = (req, res) => {
+    Comment.find({})
+        .exec(function (err, comments) {
+            if (err) {
+                res.sendStatus(400)
+            }
+            else {
+                res.send({ comments: comments });
+            }
+        });
+};
