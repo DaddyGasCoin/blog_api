@@ -4,6 +4,8 @@
  
 [frontend preview](https://blog-frontend-jy6q.onrender.com/) :point_left:
 
+[CMS](https://blog-cms-seven.vercel.app/)
+
 ## Features
  - View individual post and comments
  - Proteced routes using JWT
